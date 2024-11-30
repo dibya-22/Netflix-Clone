@@ -1,0 +1,541 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --netflix_color: rgb(229, 9, 20);
+    --bgcolor: rgb(15, 15, 15);
+}
+
+html, body{
+    background-color: var(--bgcolor);
+    font-family: 'Poppins';
+}
+
+nav{
+    margin: 20px;
+    padding: 5px 5px 0px 5px;
+    display: flex;
+    width: 95vw;
+    justify-content: space-between;
+    justify-self: center;
+}
+
+nav .logo{
+    width: 9.25rem;
+    height: 2.5rem;
+}
+
+nav .btn button{
+    border: 1px solid gray;
+    border-radius: 25px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+nav .btn button:active{
+    border: 2px solid white;
+}
+
+.lang{
+    background-color: rgb(18, 17, 17);
+    color: white;
+    justify-content: space-around;
+    padding: 5px 10px;
+}
+
+.sign-in{
+    color: black;
+    background-color: white;
+    padding: 7px 14px;
+}
+
+.sign-in:hover{
+    background-color: rgb(182, 181, 180);
+}
+
+nav .btn button span{
+    font-size: 15px;
+    padding: 0px 10px;
+}
+
+.main{
+    width: 95vw;
+    height: 75vh;
+    box-shadow: -2px -2px 2px white;
+    justify-self: center;
+    align-self: center;
+    border-radius: 20px;
+    background-image: url(assets/bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: max(1500px, 100vw);
+    position: relative;
+}
+
+.box{
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
+    background-color: black;
+    border-radius: 20px;
+    position: absolute;
+}
+
+
+.arrow{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 10;
+}
+
+.arrow button{
+    background-color: rgba(128,128,128,0.4);
+    border: none;
+    border-radius: 15px;
+    padding: 27px 0;
+    margin: 0 30px;
+    align-items: center;
+    justify-items: center;
+    z-index: 15;
+}
+
+.arrow button:hover {
+    background-color: rgba(180, 180, 180, 0.2);
+}
+
+.hero{
+    height: 100%;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    position: absolute;
+    font-family: sans-serif;
+    color: white;
+}
+
+.hero :first-child{
+    max-width: 900px; 
+    font-size: 60px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.hero:nth-child(2){
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.side{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.carousel{
+    display: flex;
+    align-items: center;
+}
+
+.play-pause {
+    width: 0;
+    height: 0;
+    border-left: 15px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    background: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.bar{
+    height: 4px;
+    width: 120px;
+    background-color: rgb(144, 144, 144);
+    border-radius: 10px;
+    margin: 30px 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bar:hover{
+    height: 5px;
+    background-color: white;
+}
+
+.side span{
+    color: rgb(208, 190, 193);
+    font-family: Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.side .email{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.side .email input{
+    height: 50px;
+    width: 300px;
+    padding: 0px 10px;
+    background-color: rgb(24, 22, 22);
+    border: 1px solid rgb(98, 97, 97);
+    border-radius: 50px;
+    color: white;
+    margin-right: 10px;
+}
+
+.side .email input:focus{
+    border: 2px solid white;
+    outline: none;
+}
+
+.side .email input::placeholder {
+    color: gray;
+    transition: all 0.3s ease;
+}
+
+.side .email input:focus::placeholder {
+    transform: translate(-250%) scale(0.8); 
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    visibility: visible;
+}
+
+.side .email button{
+    width: 225px;
+    height: 55px;
+    background-color: var(--netflix_color);
+    font-weight: bolder;
+    border: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side .email button:hover{
+    background-color: rgb(193, 17, 25);
+}
+
+.side .email button span{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.trending, .netflix{
+    margin: 30px;
+    width: 75vw;
+    justify-self: center;
+}
+
+.shows{
+    width: 75vw;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}
+
+h1{
+    color: rgb(236, 236, 236);
+}
+
+.shows img{
+    height: auto;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.queries{
+    margin-top: 50px;
+    width: 75vw;
+    justify-self: center;
+}
+
+.queries h1{
+    color: white;
+}
+
+.queries span{
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.more{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.more .reasons{
+    height: 90px;
+    background-color: rgb(39, 39, 39);
+    border-radius: 15px;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.reasons span{
+    font-size: clamp(14px, 2vw, 18px);
+    word-wrap: break-word;
+    line-height: 1.2;
+}
+
+.faq{
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.questions{
+    width: 72vw;
+    height: 75px;
+    background-color: rgb(39, 39, 39);
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    padding: 0px 1.5vw;
+}
+
+.questions:hover{
+    background-color: rgb(63, 63, 63);
+}
+
+.membership{
+    margin-top: 50px;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.membership button{
+    width: 150px;
+    height: 36px;
+    background-color: var(--netflix_color);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.membership button:hover{
+    background-color: rgb(193, 17, 25);
+}
+
+.membership span{
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+footer{
+    width: 70vw;
+    margin-top: 50px;
+    color: rgb(179, 179, 179);
+    justify-self: center;
+}
+
+footer a{
+    color: rgb(179, 179, 179);
+}
+
+footer span a{
+    font-weight: bold;
+}
+
+.grid-links{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.grid-links a{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+footer button{
+    border: 1px solid gray;
+    border-radius: 25px;
+    margin-top: 60px;
+    font-weight: bold;
+}
+
+footer button:active{
+    border: 2px solid white;
+}
+
+footer button span{
+    font-size: 15px;
+    padding: 0px 10px;
+}
+
+.copyright{
+    margin-top: 35px;
+    font-family: sans-serif;
+}
+
+@media (max-width: 1130px){
+    .hero :first-child{
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 950px){
+    .main{
+        height: 50vh;
+    }
+
+    .hero :first-child{
+        font-size: 30px;
+    }
+
+    .hero:nth-child(2){
+        font-size: 10px;
+    }
+
+    .shows{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .more{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 15px;
+    }
+
+    .reasons span{
+        font-size: 20px;
+    }
+
+    .grid-links{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+    }
+}
+
+@media (max-width: 600px){
+    .main{
+        height: 30vh;
+    }
+
+    .hero :first-child{
+        font-size: 20px;
+    }
+
+    .carousel{
+        width: 80vw;
+        justify-content: center;
+    }
+
+    .play-pause {
+        border-left: 12px solid white;  
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        margin-right: 8px;
+    }
+
+    .bar{
+        width: 90px;
+        height: 3px;
+        margin: 30px 3px;
+
+    }
+
+    .side span{
+        font-size: 10px;
+    }
+
+    .email{
+        flex-direction: column;
+        width: 80vw;
+        gap: 10px;
+    }
+
+    .email input{
+        width: 100%;
+        padding: 10px;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .email button{
+        width: 100%;
+        padding: 10px;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .grid-links{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(16, 1fr);
+    }
+}
+
+@media (max-width: 450px){
+    .main{
+        height: 25vh;
+    }
+
+    .carousel{
+        width: 50vw;
+        justify-content: center;
+    }
+
+    .play-pause {
+        border-left: 6px solid white;  
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        margin-right: 2px;
+    }
+
+    .bar{
+        width: 40px;
+        height: 1.5px;
+        margin: 30px 2px;
+    }
+
+    .email{
+        width: 70vw;
+        gap: 7px;
+    }
+
+    .email input{
+        width: 60%;
+        padding: 5px;
+    }
+
+    .email button{
+        width: 60%;
+        padding: 5px;
+    }
+
+    .queries h1{
+        font-size: 20px;
+    }
+}
